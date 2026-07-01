@@ -7,6 +7,7 @@ Dalam proyek ini, kontribusi yang dilakukan berfokus pada penambahan dan pengemb
 - Memperbaiki beberapa tampilan (UI) yang belum sesuai
 - Menambahkan button pada fitur login
 - Mendesain ulang tampilan halaman login (Jabar CorpU Talent) agar tidak terkesan kaku dan monoton, serta memberikan pembeda visual yang lebih jelas antar masing-masing pilihan login (ASN Pemprov Jabar, ASN Instansi Lainnya, Tenaga Kontrak Pemerintahan, dan Masyarakat Umum)
+- menambahkan kalimat sapaan dinamis beserta nama pengguna yang sedang melakukan login
 - Perbaikan dan penambahan fitur lainnya akan terus dilakukan seiring proses pengecekan pada website
 
 ## Pengembang
