@@ -10,7 +10,7 @@ Dalam proyek ini, kontribusi yang dilakukan berfokus pada penambahan dan pengemb
 - menambahkan kalimat sapaan dinamis beserta nama pengguna yang sedang melakukan login
 - Perbaikan dan penambahan fitur lainnya akan terus dilakukan seiring proses pengecekan pada website
 
-## Pengembang
+## Tim Pengembang
 1. Mulya Delani (123140019)
 2. Eka Putri Azhari Ritonga (123140028)
 3. Atalie Salsabila (123140027)
