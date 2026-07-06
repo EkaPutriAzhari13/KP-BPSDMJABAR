@@ -82,7 +82,6 @@
   </div>
  
   <script>
-    // Sapaan real-time berdasarkan jam saat halaman dibuka
     function getGreeting() {
       const hour = new Date().getHours();
       if (hour >= 4 && hour < 11) return "Selamat Pagi,";
@@ -90,8 +89,6 @@
       if (hour >= 15 && hour < 18) return "Selamat Sore,";
       return "Selamat Malam,";
     }
- 
-    // Ambil nama pengguna yang disimpan saat login
     function getUserName() {
       return localStorage.getItem('jabar_corpu_user_name') || 'Pengguna';
     }
