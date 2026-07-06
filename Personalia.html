@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Selamat Datang - Jabar CorpU Talent Portal</title>
- 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,22 +14,14 @@
   </style>
 </head>
 <body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
- 
-  <!-- Main container (card besar dengan shadow tebal) -->
   <div class="bg-white rounded-lg shadow-2xl p-12 flex flex-col gap-12 w-full max-w-[576px]">
- 
-    <!-- Header Section -->
-    <div class="flex flex-col items-center w-full">
- 
-      <!-- Login Success Badge -->
+    <div class="flex flex-col items-center w-full"
       <div class="pb-6">
         <div class="flex items-center gap-2 bg-[#ecfdf5] border border-[#d1fae5] rounded-full px-[17px] py-[7px]">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span class="text-sm text-[#059669]">Login Berhasil</span>
         </div>
       </div>
- 
-      <!-- User Welcome Message with online indicator -->
       <div class="flex items-center gap-1.5 pb-1">
         <span id="greeting-text" class="text-sm text-[#6b7280]">Selamat Malam,</span>
         <span id="greeting-name" class="text-sm font-bold text-[#1f2937]">Mulya Delani</span>
@@ -39,18 +30,12 @@
           <span class="relative inline-flex rounded-full h-2 w-2 bg-[#22d3ee]"></span>
         </span>
       </div>
- 
-      <!-- Main Title -->
       <h1 class="font-bold text-[36px] leading-[40px] text-[#1e293b] text-center pb-4">
         Welcome to Jabar CorpU Talent Portal
       </h1>
       <p class="text-base text-[#9ca3af] text-center">Silakan pilih sistem yang ingin Anda tuju.</p>
     </div>
- 
-    <!-- Dashboard Cards -->
     <div class="flex gap-8 items-start justify-center w-full max-sm:flex-col">
- 
-      <!-- LMS Card -->
       <div class="flex-1 bg-white border border-[#f3f4f6] rounded-xl shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] overflow-hidden">
         <div class="p-6 pb-0">
           <div class="aspect-video bg-[#f9fafb] rounded-lg flex items-center justify-center overflow-hidden mb-8">
@@ -72,8 +57,6 @@
           </a>
         </div>
       </div>
- 
-      <!-- KMS Card -->
       <div class="flex-1 bg-white border border-[#f3f4f6] rounded-xl shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] overflow-hidden">
         <div class="p-6 pb-0">
           <div class="aspect-video bg-[#f9fafb] rounded-lg flex items-center justify-center overflow-hidden mb-8">
@@ -121,7 +104,6 @@
         document.getElementById('greeting-text').textContent = getGreeting();
       }
     });
-  </script>
- 
+  </script> 
 </body>
 </html>
