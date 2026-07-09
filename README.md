@@ -8,11 +8,14 @@ Proyek ini merupakan bagian dari program magang/KP di Badan Pengembangan Sumber 
 
 | File | Keterangan |
 |---|---|
-| `pilihlogin.html` | Halaman awal untuk memilih kategori login (menampilkan 4 pilihan kategori pengguna) |
-| `loginASNpemprov.html` | Halaman login khusus untuk ASN Pemprov Jabar |
-| `loginASNlintas.html` | Halaman login untuk ASN Instansi Lainnya |
-| `loginkontrak.html` | Halaman login untuk Tenaga Kontrak Pemerintahan |
-| `loginmasyarakatumum.html` | Halaman login untuk Masyarakat Umum |
+| `pilihlogin.php` | Halaman awal untuk memilih kategori login (menampilkan 4 pilihan kategori pengguna) |
+| `loginASNpemprov.php` | Halaman login khusus untuk ASN Pemprov Jabar |
+| `loginASNlintas.php` | Halaman login untuk ASN Instansi Lainnya |
+| `loginkontrak.php` | Halaman login untuk Tenaga Kontrak Pemerintahan |
+| `loginmasyarakatumum.php` | Halaman login untuk Masyarakat Umum |
+| `index.php` | Halaman beranda Jabar CorpU Talent |
+| `kolaborasi.php` | Halaman kolaborasi |
+| `Personalia.php` | Halaman personalia |
 
 ## Fitur yang Dikerjakan
 - Menambahkan efek hover pada beberapa elemen tampilan
@@ -20,12 +23,24 @@ Proyek ini merupakan bagian dari program magang/KP di Badan Pengembangan Sumber 
 - Menambahkan button pada fitur login
 - Mendesain ulang tampilan halaman login (Jabar CorpU Talent) agar tidak terkesan kaku dan monoton, serta memberikan pembeda visual yang lebih jelas antar masing-masing pilihan login (ASN Pemprov Jabar, ASN Instansi Lainnya, Tenaga Kontrak Pemerintahan, dan Masyarakat Umum)
 - Menambahkan kalimat sapaan dinamis beserta nama pengguna yang sedang melakukan login
+- Migrasi seluruh halaman dari HTML statis ke PHP, sebagai persiapan integrasi dengan database dan penambahan fitur dinamis (login, penyimpanan data, dsb)
 - Perbaikan dan penambahan fitur lainnya akan terus dilakukan seiring proses pengecekan pada website
 
 ## Cara Menjalankan
-1. Clone repositori ini ke lokal:
+
+Karena project ini sudah menggunakan **PHP**, dibutuhkan local server (seperti XAMPP) untuk menjalankannya — tidak bisa dibuka langsung lewat Live Server atau double click file di browser.
+
+1. Install [XAMPP](https://www.apachefriends.org/) di komputer kamu.
+2. Clone repositori ini ke dalam folder `htdocs` milik XAMPP:
+   ```
    git clone https://github.com/EkaPutriAzhari13/KP-BPSDMJABAR.git
-2. Buka file `pilihlogin.html` langsung di browser, atau jalankan menggunakan Live Server (ekstensi VS Code) untuk hasil yang lebih optimal.
+   ```
+   Contoh lokasi: `C:\xampp\htdocs\KP-BPSDMJABAR`
+3. Buka **XAMPP Control Panel**, lalu klik **Start** pada modul **Apache**.
+4. Buka browser, akses:
+   ```
+   http://localhost/KP-BPSDMJABAR/index.php
+   ```
 
 ## Tim Pengembang
 1. Mulya Delani (123140019)
