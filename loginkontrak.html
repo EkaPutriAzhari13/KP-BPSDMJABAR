@@ -1,101 +1,350 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masuk Akun - Tenaga Kontrak - Jabar CorpU Talent</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masuk Akun - Tenaga Kontrak</title>
+<style>
+  :root{
+    --teal: #167a5c;
+    --teal-dark: #0b6a4f;
+    --teal-badge-bg: #dcf3e9;
+    --teal-badge-border: #167a5c;
+    --text-dark: #1c1e22;
+    --text-muted: #6b7280;
+    --border-color: #e2e4e8;
+    --placeholder: #9aa0a8;
+  }
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  * { box-sizing: border-box; }
 
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
-  </style>
+  html, body{
+    height: 100%;
+  }
+
+  body{
+    margin:0;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    min-height:100vh;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 40px 16px;
+  }
+
+  .card{
+    width: 100%;
+    max-width: 490px;
+    padding: 20px 4px;
+  }
+
+  .title{
+    text-align:center;
+    color: var(--teal);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 18px;
+  }
+
+  .badge-wrap{
+    display:flex;
+    justify-content:center;
+    margin-bottom: 22px;
+  }
+
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background: var(--teal-badge-bg);
+    border: 1px solid var(--teal-badge-border);
+    color: var(--teal);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 999px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .badge:hover{
+    background: #cdeee0;
+    transform: scale(1.03);
+  }
+
+  .subtitle{
+    text-align:center;
+    color: var(--text-muted);
+    font-size: 16px;
+    margin: 0 0 34px;
+    line-height: 1.5;
+  }
+
+  .field{
+    margin-bottom: 20px;
+  }
+
+  .field-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 8px;
+  }
+
+  label{
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+
+  .forgot{
+    font-size: 14px;
+    color: var(--teal);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  }
+
+  .forgot:hover{
+    color: var(--teal-dark);
+    text-decoration: underline;
+  }
+
+  .input-wrap{
+    position: relative;
+    display:flex;
+    align-items:center;
+  }
+
+  .input-wrap .icon{
+    position:absolute;
+    left: 14px;
+    display:flex;
+    align-items:center;
+    color: var(--placeholder);
+  }
+
+  .input-wrap .icon.right{
+    left: auto;
+    right: 14px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .input-wrap .icon.right:hover{
+    color: var(--teal);
+  }
+
+  input[type="text"],
+  input[type="password"]{
+    width: 100%;
+    padding: 14px 44px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--text-dark);
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  input::placeholder{
+    color: var(--placeholder);
+  }
+
+  input:hover{
+    border-color: #b9bec6;
+  }
+
+  input:focus{
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(22, 122, 92, 0.15);
+  }
+
+  .btn-primary{
+    width:100%;
+    background: var(--teal-dark);
+    color:#fff;
+    border:none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    cursor:pointer;
+    margin-top: 6px;
+    margin-bottom: 24px;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-primary svg{
+    transition: transform 0.2s ease;
+  }
+
+  .btn-primary:hover{
+    background: #0a5c44;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(11, 106, 79, 0.35);
+  }
+
+  .btn-primary:hover svg{
+    transform: translateX(3px);
+  }
+
+  .btn-primary:active{
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom: 24px;
+  }
+
+  .divider::before,
+  .divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background: var(--border-color);
+  }
+
+  .divider span{
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .btn-google{
+    width:100%;
+    background: #f7f9fc;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    cursor:pointer;
+    margin-bottom: 28px;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-google:hover{
+    background: #eef1f7;
+    border-color: #c7cbd1;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+
+  .btn-google:active{
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  .back-link{
+    display:block;
+    text-align:center;
+    color: var(--text-dark);
+    text-decoration:none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover{
+    color: var(--teal);
+  }
+</style>
 </head>
-<body class="bg-gradient-to-b from-[#f9f9ff] to-white min-h-screen flex flex-col items-center justify-center p-4">
+<body>
 
-  <div class="w-full max-w-[420px] bg-white border border-[#bcc9c4]/30 rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,104,87,0.05),0_8px_10px_-6px_rgba(0,104,87,0.05)] overflow-hidden">
+  <div class="card">
+    <h1 class="title">Masuk Akun</h1>
 
-    <div class="flex flex-col items-center pt-6 px-6">
-      <div class="w-20 h-20 rounded-full bg-[#e7eeff] flex items-center justify-center mb-3">
-        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="#006857" stroke-width="1.5"><circle cx="12" cy="8" r="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h1 class="font-heading text-base text-[#006857] mb-2">Masuk Akun</h1>
-      <span class="inline-flex items-center gap-1.5 text-sm text-[#006b5e] bg-[#85f3df]/20 border border-[#85f3df]/50 rounded-xl px-3 py-1 mb-2">
-        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="badge-wrap">
+      <span class="badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 7h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2h-4V5Z" fill="currentColor"/>
+        </svg>
         Tenaga Kontrak
       </span>
-      <p class="text-base text-[#3d4945] text-center pb-6">Anda masuk sebagai Tenaga Kontrak</p>
     </div>
-    <div class="flex flex-col gap-6 p-6">
-      <form class="flex flex-col gap-4 w-full">
-        <div class="flex flex-col gap-[6px] w-full">
-          <label for="identitas" class="text-base text-[#3d4945]">Email / NIP / NIK</label>
-          <div class="relative w-full">
-            <span class="absolute left-[14px] top-1/2 -translate-y-1/2 text-[#6d7a75]">
-              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <input
-              id="identitas"
-              type="text"
-              placeholder="Masukkan ID anda"
-              class="w-full bg-[#f9f9ff] border border-[#bcc9c4]/60 rounded-lg pl-[45px] pr-[17px] py-[15px] text-base text-[#111c2c] placeholder:text-[#6d7a75]/50 outline-none focus:border-[#006857] focus:ring-2 focus:ring-[#006857]/20"
-            />
-          </div>
-        </div>
 
-        <div class="flex flex-col gap-[6px] w-full pb-2">
-          <div class="flex items-center justify-between">
-            <label for="password" class="text-base text-[#3d4945]">Kata Sandi</label>
-            <a href="#" class="text-base text-[#006857] hover:underline">Lupa?</a>
-          </div>
-          <div class="relative w-full">
-            <span class="absolute left-[14px] top-1/2 -translate-y-1/2 text-[#6d7a75]">
-              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <input
-              id="password"
-              type="password"
-              placeholder="••••••••"
-              class="w-full bg-[#f9f9ff] border border-[#bcc9c4]/60 rounded-lg pl-[45px] pr-[45px] py-[15px] text-base text-[#111c2c] placeholder:text-[#6d7a75]/50 outline-none focus:border-[#006857] focus:ring-2 focus:ring-[#006857]/20"
-            />
-            <button type="button" aria-label="Tampilkan kata sandi" class="absolute right-[14px] top-1/2 -translate-y-1/2 text-[#6d7a75]">
-              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </div>
-        </div>
+    <p class="subtitle">Anda masuk sebagai Tenaga Kontrak</p>
 
-        <button type="submit" class="flex items-center justify-center gap-2 w-full py-[14px] rounded-lg bg-[#006857] text-white text-base shadow-[0_10px_15px_-3px_rgba(0,104,87,0.2),0_4px_6px_-4px_rgba(0,104,87,0.2)] hover:bg-[#00543f] transition-colors">
-          Masuk Sekarang
-          <svg class="w-[13.5px] h-[13.5px]" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-
-        <div class="flex items-center w-full py-2">
-          <span class="h-px flex-1 bg-[#bcc9c4]/30"></span>
-          <span class="px-4 text-base text-[#6d7a75]">atau</span>
-          <span class="h-px flex-1 bg-[#bcc9c4]/30"></span>
-        </div>
-
-        <button type="button" class="flex items-center justify-center gap-3 w-full py-[13px] rounded-lg border border-[#bcc9c4]/60 hover:bg-gray-50 transition-colors">
-          <svg class="w-5 h-5" viewBox="0 0 48 48">
-            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.9 32.9 29.4 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5Z"/>
-            <path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.6 15.9 18.9 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.5 4 24 4 16.3 4 9.7 8.3 6.3 14.7Z"/>
-            <path fill="#4CAF50" d="M24 44c5.4 0 10.3-2.1 14-5.5l-6.5-5.4C29.5 34.9 26.9 36 24 36c-5.4 0-9.9-3.1-11.3-7.4l-6.5 5C9.6 39.6 16.2 44 24 44Z"/>
-            <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.7 2-2 3.7-3.7 4.9l6.5 5.4C39.9 36.7 44 31 44 24c0-1.3-.1-2.7-.4-3.5Z"/>
+    <div class="field">
+      <div class="field-row">
+        <label for="userid">Email / NIP / NIK</label>
+      </div>
+      <div class="input-wrap">
+        <span class="icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.42 0-8 2.24-8 5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-2.76-3.58-5-8-5Z" fill="currentColor"/>
           </svg>
-          <span class="text-base text-[#111c2c]">Masuk dengan Google</span>
-        </button>
-      </form>
-
-      <p class="text-base text-center text-[#3d4945]">
-        Belum punya akun? <span class="font-semibold text-[#006857]">Daftar</span>
-      </p>
+        </span>
+        <input type="text" id="userid" placeholder="Masukkan ID Anda">
+      </div>
     </div>
+
+    <div class="field">
+      <div class="field-row">
+        <label for="password">Sandi</label>
+        <a href="#" class="forgot">Lupa sandi?</a>
+      </div>
+      <div class="input-wrap">
+        <span class="icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 10V8a6 6 0 1 1 12 0v2h.5A1.5 1.5 0 0 1 20 11.5v8A1.5 1.5 0 0 1 18.5 21h-13A1.5 1.5 0 0 1 4 19.5v-8A1.5 1.5 0 0 1 5.5 10H6Zm2 0h8V8a4 4 0 1 0-8 0v2Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <input type="password" id="password" placeholder="Masukkan kata sandi">
+        <span class="icon right" id="togglePw">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5c-5.5 0-9.5 4.5-10 7 0.5 2.5 4.5 7 10 7s9.5-4.5 10-7c-0.5-2.5-4.5-7-10-7Zm0 11.5A4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 0 1 0 9Zm0-2.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <button class="btn-primary" type="button">
+      Masuk Sekarang
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 5l7 7-7 7M20 12H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="divider"><span>ATAU MASUK DENGAN</span></div>
+
+    <button class="btn-google" type="button">
+      <svg width="18" height="18" viewBox="0 0 48 48">
+        <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.3 6.1 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.4-.4-3.5z"/>
+        <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.9 18.9 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34.3 6.1 29.4 4 24 4c-7.5 0-14 4.2-17.3 10.7z"/>
+        <path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.3C29.3 35.4 26.8 36 24 36c-5.3 0-9.7-3.1-11.3-7.9l-6.5 5C9.9 39.7 16.4 44 24 44z"/>
+        <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.3 5.3C40.9 36.4 44 30.8 44 24c0-1.2-.1-2.4-.4-3.5z"/>
+      </svg>
+      Masuk dengan Google
+    </button>
+
+    <a href="pilih-login.html" class="back-link">Kembali ke Halaman Utama</a>
   </div>
-  <p class="text-base text-[#3d4945] opacity-70 text-center pt-8">© 2024 Jabar CorpU Talent.</p>
+
+  <script>
+    const toggle = document.getElementById('togglePw');
+    const pwInput = document.getElementById('password');
+    toggle.addEventListener('click', () => {
+      pwInput.type = pwInput.type === 'password' ? 'text' : 'password';
+    });
+  </script>
 
 </body>
 </html>
