@@ -13,7 +13,7 @@
 
     <style>
         :root {
-            --primary-teal: #00897b;
+            --primary-teal: #9D174D;
             --hover-teal: #00695c;
             --bg-light: #f0fdfa;
         }
@@ -26,14 +26,23 @@
 
         /* Sisi Kiri: Branding */
         .branding-side {
-            background: linear-gradient(135deg, #f0fdf9 0%, #ccfbf1 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 5rem;
-            position: relative;
-        }
+    background:
+        radial-gradient(circle at 20% 15%, rgba(182,212,245,0.55) 0%, rgba(182,212,245,0) 45%),
+        radial-gradient(circle at 75% 10%, rgba(201,184,242,0.55) 0%, rgba(201,184,242,0) 45%),
+        radial-gradient(circle at 15% 55%, rgba(201,184,242,0.5) 0%, rgba(201,184,242,0) 45%),
+        radial-gradient(circle at 85% 55%, rgba(243,184,214,0.55) 0%, rgba(243,184,214,0) 45%),
+        radial-gradient(circle at 30% 90%, rgba(243,184,214,0.5) 0%, rgba(243,184,214,0) 45%),
+        radial-gradient(circle at 90% 95%, rgba(251,210,166,0.6) 0%, rgba(251,210,166,0) 45%),
+        linear-gradient(135deg, #eaf0fb 0%, #f3d9e8 50%, #fbdfc4 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;      /* BARU */
+    text-align: center;       /* BARU */
+    padding: 2rem;
+    position: relative;
+}
 
         .branding-side::before {
             content: "";
@@ -172,14 +181,10 @@
         <div class="row g-0">
             <!-- Sisi Kiri: Branding -->
             <div class="col-lg-6 branding-side">
-                <div class="branding-content">
-                    <img src="assets/logo-jct1.svg" alt="Logo Jabar CorpU Talent" class="mb-5" style="max-width: 280px;">
-                    <div class="branding-content">
-    <p class="branding-text">
-        Jabar Corporate University Talent merupakan Super App pembelajaran digital sebagai upaya membangun organisasi pembelajar Provinsi Jabar. Super App ini berisi beragam aplikasi pembelajaran yang lengkap dalam satu tempat, memudahkan tidak hanya bagi para pembelajar ASN dan masyarakat umum namun juga memudahkan para pengelola pembelajaran.
-    </p>
-</div>
-                    
+               <div class="branding-content">
+                    <img src="assets/KarakterLogin.svg" alt="Karakter " class="mb-5" style="width: 600px; max-width: 90%; height: auto;">
+                    <h1 class="branding-title">Jabar CorpU Talent</h1>
+<h2 class="branding-subtitle">Sistem Pembelajaran Aparatur Jabar Diajar</h2>
                 </div>
             </div>
 
@@ -310,11 +315,37 @@
         }
 
         function showForm(category, iconClass) {
-            ...
+            document.getElementById('selected-category').innerText = category;
+
+            const formIconWrapper = document.getElementById('form-icon');
+            formIconWrapper.innerHTML = `<i class="bi ${iconClass}"></i>`;
+
+            if(category.includes('Pemprov')) formIconWrapper.className = "d-inline-flex align-items-center justify-content-center rounded-circle mb-3 bg-primary-subtle text-primary";
+            if(category.includes('Lainnya')) formIconWrapper.className = "d-inline-flex align-items-center justify-content-center rounded-circle mb-3 bg-success-subtle text-success";
+            if(category.includes('Kontrak')) formIconWrapper.className = "d-inline-flex align-items-center justify-content-center rounded-circle mb-3 bg-warning-subtle text-warning";
+            if(category.includes('Umum')) formIconWrapper.className = "d-inline-flex align-items-center justify-content-center rounded-circle mb-3 bg-purple-subtle text-purple";
+
+            const googleBtn = document.getElementById('google-btn');
+            const siapJabarBtn = document.getElementById('siap-jabar-btn');
+            const smartJabarBtn = document.getElementById('smart-jabar-btn');
+
+            if (category === 'ASN Pemprov Jabar') {
+                googleBtn.style.display = 'none';
+                siapJabarBtn.style.display = 'flex';
+                smartJabarBtn.style.display = 'flex';
+            } else {
+                googleBtn.style.display = 'flex';
+                siapJabarBtn.style.display = 'none';
+                smartJabarBtn.style.display = 'none';
+            }
+
+            document.getElementById('view-categories').classList.add('hidden');
+            document.getElementById('view-form').classList.remove('hidden');
         }
 
         function showCategories() {
-            ...
+            document.getElementById('view-form').classList.add('hidden');
+            document.getElementById('view-categories').classList.remove('hidden');
         }
     </script>
 </body>
