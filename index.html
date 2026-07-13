@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
  
   <style>
     body { font-family: 'Inter', sans-serif; }
@@ -25,17 +25,9 @@
       animation: bubble-pop 650ms ease-out forwards;
     }
     @keyframes bubble-pop {
-      0% {
-        transform: scale(0);
-        opacity: 0.8;
-      }
-      60% {
-        opacity: 0.5;
-      }
-      100% {
-        transform: scale(2.8);
-        opacity: 0;
-      }
+      0% { transform: scale(0); opacity: 0.8; }
+      60% { opacity: 0.5; }
+      100% { transform: scale(2.8); opacity: 0; }
     }
     .card-bubble .bubble,
     .nav-bubble .bubble {
@@ -43,113 +35,208 @@
     }
  
     .card-hover {
-      transition: transform 220ms ease, box-shadow 220ms ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .card-hover:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 25px 30px -10px rgba(0,0,0,0.15), 0 10px 12px -6px rgba(0,0,0,0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
     }
+
+    /* Custom scrollbar untuk estetika */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #149981; border-radius: 10px; }
   </style>
 </head>
-<body class="bg-[#f9fafb]">
-  <header class="w-full flex items-center justify-between px-8 py-[30px] bg-white border-b border-gray-100">
+<body class="bg-[#f9fafb] text-[#1f2937]">
+
+  <!-- Header -->
+  <header class="w-full flex items-center justify-between px-8 py-[20px] bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
     <div class="flex items-center gap-2">
       <img src="https://www.figma.com/api/mcp/asset/2355db60-4140-4f63-8476-42b40a76894f" alt="Jabar CorpU Talent Logo" class="h-10 w-auto" />
     </div>
-    <nav class="hidden md:flex items-center gap-2">
-      <a href="#" class="bubble-effect nav-bubble text-sm text-gray-700 px-3 py-3 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Pembelajaran Mandiri</a>
-      <a href="#" class="bubble-effect nav-bubble text-sm text-gray-700 px-3 py-3 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Blended Learning</a>
-      <a href="#" class="bubble-effect nav-bubble text-sm text-gray-700 px-3 py-3 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Kolaborasi</a>
-      <a href="#" class="bubble-effect nav-bubble text-sm text-gray-700 px-3 py-3 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Webinar</a>
-      <a href="#" class="bubble-effect nav-bubble text-sm text-gray-700 px-3 py-3 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Pengetahuan</a>
-      <a href="#" class="bubble-effect nav-bubble flex items-center gap-1 text-sm text-gray-700 px-3 py-3 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="#" class="bubble-effect nav-bubble text-sm font-medium text-gray-700 px-4 py-2 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Pembelajaran Mandiri</a>
+      <a href="#" class="bubble-effect nav-bubble text-sm font-medium text-gray-700 px-4 py-2 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Blended Learning</a>
+      <a href="#" class="bubble-effect nav-bubble text-sm font-medium text-[#149981] bg-[#149981]/10 px-4 py-2 rounded-md transition-colors">Kolaborasi</a>
+      <a href="#" class="bubble-effect nav-bubble text-sm font-medium text-gray-700 px-4 py-2 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Webinar</a>
+      <a href="#" class="bubble-effect nav-bubble text-sm font-medium text-gray-700 px-4 py-2 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">Pengetahuan</a>
+      <a href="#" class="bubble-effect nav-bubble flex items-center gap-1 text-sm font-medium text-gray-700 px-4 py-2 rounded-md hover:bg-[#149981]/10 hover:text-[#0f7c68] transition-colors">
         Tutorial
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </nav>
-    <a href="pilih-jenis-login.html" class="bubble-effect bg-[#149981] text-white text-base px-8 py-2 rounded-md hover:bg-[#0f7c68] transition-colors">
-      Masuk
-    </a>
+    <div class="flex items-center gap-4">
+        <a href="pilih-jenis-login.html" class="bubble-effect bg-[#149981] text-white text-sm font-semibold px-8 py-2.5 rounded-lg hover:bg-[#0f7c68] transition-all shadow-md active:scale-95">
+          Masuk
+        </a>
+    </div>
   </header>
-  <section class="px-8 pt-24 pb-32" style="background-image: linear-gradient(135deg, rgb(16, 138, 67) 0%, rgb(20, 153, 129) 100%);">
+
+  <!-- Hero Section -->
+  <section class="px-8 pt-20 pb-32" style="background: linear-gradient(135deg, #108a43 0%, #149981 100%);">
     <div class="flex flex-wrap gap-12 items-center justify-center max-w-[1200px] mx-auto">
- 
       <div class="flex-1 min-w-[320px] flex flex-col gap-2">
-        <p class="font-bold text-lg text-white">Pembelajaran Digital</p>
-        <h1 class="font-bold text-[44px] md:text-[60px] leading-[1.05] text-white">
+        <p class="font-bold text-lg text-white/90">Pembelajaran Digital</p>
+        <h1 class="font-bold text-[44px] md:text-[60px] leading-[1.1] text-white">
           Selamat Datang di<br />
           <span class="relative inline-block">
-            Jabar<br />CorpU Talent
-            <span class="absolute -bottom-2 left-0 right-1/4 h-1 bg-[#f4c400]"></span>
+            Jabar CorpU Talent
+            <span class="absolute -bottom-2 left-0 w-1/2 h-1.5 bg-[#f4c400] rounded-full"></span>
           </span>
         </h1>
-        <p class="text-lg text-white/90 pt-4 max-w-[512px]">
+        <p class="text-lg text-white/80 pt-6 max-w-[512px] leading-relaxed">
           Membangun organisasi pembelajar melalui ekosistem digital yang terintegrasi dan dapat diakses kapan saja.
         </p>
-        <div class="flex gap-4 pt-8">
-          <button class="bubble-effect bg-[#f4c400] text-[#111827] font-bold text-base px-8 py-[13px] rounded-full hover:bg-[#e0b400] transition-colors">
+        <div class="flex gap-4 pt-10">
+          <button class="bubble-effect bg-[#f4c400] text-[#111827] font-bold text-base px-8 py-[14px] rounded-full hover:bg-[#e0b400] transition-all shadow-lg active:scale-95">
             Jelajahi Kursus
           </button>
-          <button class="bubble-effect border border-white text-white text-base px-8 py-[13px] rounded-full hover:bg-white/10 transition-colors">
+          <button class="bubble-effect border-2 border-white/30 text-white font-semibold text-base px-8 py-[14px] rounded-full hover:bg-white/10 transition-all active:scale-95">
             Panduan
           </button>
         </div>
       </div>
  
       <div class="flex-1 min-w-[320px] flex justify-end">
-        <div class="w-full max-w-[576px] aspect-[576/427] rounded-xl overflow-hidden">
-          <img src="https://www.figma.com/api/mcp/asset/ac6321b0-9a40-4ee7-a284-5eb89b2bb46b" alt="Ilustrasi Pembelajaran Digital" class="w-full h-full object-cover" />
+        <div class="w-full max-w-[576px] aspect-[576/427] rounded-2xl overflow-hidden shadow-2xl rotate-1">
+          <img src="https://www.figma.com/api/mcp/asset/ac6321b0-9a40-4ee7-a284-5eb89b2bb46b" alt="Ilustrasi" class="w-full h-full object-cover" />
         </div>
       </div>
     </div>
   </section>
-  <section class="px-8 -mt-24 pb-24">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1200px] mx-auto">
-      <div class="bubble-effect card-bubble card-hover bg-white rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] p-8 flex flex-col items-center text-center cursor-pointer">
-        <div class="h-16 flex items-center justify-center mb-6">
-          <img src="https://www.figma.com/api/mcp/asset/49ca994d-8152-44b9-89c2-3d4a564471ec" alt="Sista Praja" class="h-16 w-auto" />
+  <!-- Fitur Utama Section -->
+  <section class="px-8 -mt-20 pb-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
+      <!-- Card 1 -->
+      <div class="bubble-effect card-bubble card-hover bg-white rounded-2xl p-8 flex flex-col items-center text-center cursor-pointer border border-gray-50 shadow-xl">
+        <div class="h-16 w-16 flex items-center justify-center mb-6 bg-green-50 rounded-2xl">
+          <img src="https://www.figma.com/api/mcp/asset/49ca994d-8152-44b9-89c2-3d4a564471ec" alt="Sista Praja" class="h-12 w-auto" />
         </div>
-        <h3 class="font-bold text-xl text-[#1f2937] pb-2">Sista Praja</h3>
-        <p class="text-sm text-[#6b7280] leading-[22.75px]">Learning Management System (LMS) bagi ASN</p>
+        <h3 class="font-bold text-lg text-[#1f2937] mb-2">Sista Praja</h3>
+        <p class="text-[13px] text-[#6b7280] leading-relaxed">Learning Management System (LMS) bagi ASN Jawa Barat.</p>
       </div>
-      <div class="bubble-effect card-bubble card-hover bg-white rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] p-8 flex flex-col items-center text-center cursor-pointer">
-        <div class="h-16 flex items-center justify-center mb-6">
-          <img src="https://www.figma.com/api/mcp/asset/eb245446-8949-4f17-929e-e907db8f3386" alt="MyTalenta Jabar" class="h-16 w-auto" />
+      <!-- Card 2 -->
+      <div class="bubble-effect card-bubble card-hover bg-white rounded-2xl p-8 flex flex-col items-center text-center cursor-pointer border border-gray-50 shadow-xl">
+        <div class="h-16 w-16 flex items-center justify-center mb-6 bg-blue-50 rounded-2xl">
+          <img src="https://www.figma.com/api/mcp/asset/eb245446-8949-4f17-929e-e907db8f3386" alt="MyTalenta Jabar" class="h-12 w-auto" />
         </div>
-        <h3 class="font-bold text-xl text-[#1f2937] pb-2">MyTalenta Jabar</h3>
-        <p class="text-sm text-[#6b7280] leading-[22.75px]">Learning Management System (LMS) bagi masyarakat umum</p>
+        <h3 class="font-bold text-lg text-[#1f2937] mb-2">MyTalenta Jabar</h3>
+        <p class="text-[13px] text-[#6b7280] leading-relaxed">Platform pengembangan potensi untuk masyarakat umum.</p>
       </div>
-    
-      <div class="bubble-effect card-bubble card-hover bg-white rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] p-8 flex flex-col items-center text-center cursor-pointer">
-        <div class="h-16 flex items-center justify-center mb-6">
-          <img src="https://www.figma.com/api/mcp/asset/f97138a9-fba5-49b5-8d3d-1590ca7a1c4c" alt="Wiscoverse" class="h-16 w-auto" />
+      <!-- Card 3 -->
+      <div class="bubble-effect card-bubble card-hover bg-white rounded-2xl p-8 flex flex-col items-center text-center cursor-pointer border border-gray-50 shadow-xl">
+        <div class="h-16 w-16 flex items-center justify-center mb-6 bg-orange-50 rounded-2xl">
+          <img src="https://www.figma.com/api/mcp/asset/f97138a9-fba5-49b5-8d3d-1590ca7a1c4c" alt="Wiscoverse" class="h-12 w-auto" />
         </div>
-        <h3 class="font-bold text-xl text-[#1f2937] pb-2">Wiscoverse</h3>
-        <p class="text-sm text-[#6b7280] leading-[22.75px]">Berbagi pengetahuan dan wawasan untuk masyarakat luas.</p>
+        <h3 class="font-bold text-lg text-[#1f2937] mb-2">Wiscoverse</h3>
+        <p class="text-[13px] text-[#6b7280] leading-relaxed">Berbagi pengetahuan dan wawasan untuk masyarakat luas.</p>
       </div>
-
-      <div class="bubble-effect card-bubble card-hover bg-white rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] p-8 flex flex-col items-center text-center cursor-pointer">
-        <div class="h-16 flex items-center justify-center mb-6">
-          <img src="https://www.figma.com/api/mcp/asset/3ebc65e5-adf3-48c9-90f5-99e6d187c05a" alt="Panel Coaching & Mentoring" class="h-16 w-auto" />
+      <!-- Card 4 -->
+      <div class="bubble-effect card-bubble card-hover bg-white rounded-2xl p-8 flex flex-col items-center text-center cursor-pointer border border-gray-50 shadow-xl">
+        <div class="h-16 w-16 flex items-center justify-center mb-6 bg-purple-50 rounded-2xl">
+          <img src="https://www.figma.com/api/mcp/asset/3ebc65e5-adf3-48c9-90f5-99e6d187c05a" alt="Panel Coaching" class="h-12 w-auto" />
         </div>
-        <h3 class="font-bold text-xl text-[#1f2937] pb-2">Panel Coaching &amp; Mentoring</h3>
-        <p class="text-sm text-[#6b7280] leading-[22.75px]">Sesi bimbingan eksklusif bersama Coach profesional BNSP.</p>
+        <h3 class="font-bold text-lg text-[#1f2937] mb-2">Coaching & Mentoring</h3>
+        <p class="text-[13px] text-[#6b7280] leading-relaxed">Sesi bimbingan eksklusif bersama Coach profesional BNSP.</p>
       </div>
     </div>
   </section>
+
+  <!-- NEW SECTION: KOLABORASI -->
+  <section class="px-8 py-24 bg-white">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div class="max-w-2xl">
+          <h2 class="text-[#149981] font-bold text-lg mb-2 uppercase tracking-wider">Kolaborasi</h2>
+          <h3 class="text-3xl md:text-4xl font-bold text-[#1f2937] leading-tight">
+            Tingkatkan Kompetensi Bersama <br class="hidden md:block" /> Melalui Ekosistem Kolaboratif
+          </h3>
+          <p class="text-gray-500 mt-4 text-lg">
+            Ruang interaksi untuk berbagi pengetahuan, pengalaman, dan inovasi antar ASN dan praktisi profesional.
+          </p>
+        </div>
+        <a href="#" class="group flex items-center gap-2 text-[#149981] font-bold hover:underline transition-all">
+          Lihat Semua Kolaborasi 
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Community of Practice -->
+        <div class="bubble-effect card-bubble card-hover flex flex-col bg-[#f9fafb] rounded-3xl p-8 border border-gray-100 group cursor-pointer">
+          <div class="bg-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:bg-[#149981] transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#149981] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-[#1f2937] mb-3">Community of Practice</h4>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6"> Wadah bagi para pegawai dengan minat yang sama untuk berkumpul, berdiskusi, dan memecahkan masalah bersama.</p>
+          <div class="mt-auto flex items-center gap-3">
+             <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden"><img src="https://i.pravatar.cc/100?u=1" alt="user"></div>
+                <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden"><img src="https://i.pravatar.cc/100?u=2" alt="user"></div>
+                <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center text-[10px] font-bold">+12</div>
+             </div>
+             <span class="text-xs font-medium text-gray-400">Aktif Bergabung</span>
+          </div>
+        </div>
+
+        <!-- Social Learning -->
+        <div class="bubble-effect card-bubble card-hover flex flex-col bg-[#f9fafb] rounded-3xl p-8 border border-gray-100 group cursor-pointer">
+          <div class="bg-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:bg-[#149981] transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#149981] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-[#1f2937] mb-3">Social Learning</h4>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Belajar secara informal melalui interaksi sosial, tanya jawab, dan feedback langsung dari rekan kerja serta ahli di bidangnya.</p>
+          <div class="mt-auto">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+              Baru Tersedia
+            </span>
+          </div>
+        </div>
+
+        <!-- Knowledge Sharing -->
+        <div class="bubble-effect card-bubble card-hover flex flex-col bg-[#f9fafb] rounded-3xl p-8 border border-gray-100 group cursor-pointer">
+          <div class="bg-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:bg-[#149981] transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#149981] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-[#1f2937] mb-3">Knowledge Sharing</h4>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Bagikan artikel, jurnal, atau insight terbaru untuk memperkaya literasi digital di lingkungan Pemerintah Provinsi Jawa Barat.</p>
+          <div class="mt-auto">
+            <span class="text-xs font-semibold text-[#149981]">1,240+ Dokumen Dibagikan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script (Tetap Sama) -->
   <script>
     function createBubble(e, el) {
       const rect = el.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height) * 1.4;
+      const size = Math.max(rect.width, rect.height) * 1.5;
       const bubble = document.createElement('span');
       bubble.className = 'bubble';
       bubble.style.width = bubble.style.height = size + 'px';
-      bubble.style.left = (e.clientX - rect.left - size / 2) + 'px';
-      bubble.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      
+      bubble.style.left = x + 'px';
+      bubble.style.top = y + 'px';
+      
       el.appendChild(bubble);
       bubble.addEventListener('animationend', () => bubble.remove());
     }
+
     document.querySelectorAll('.bubble-effect').forEach(el => {
       el.addEventListener('click', function (e) {
         createBubble(e, el);
