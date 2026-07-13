@@ -13,6 +13,9 @@ Proyek ini merupakan bagian dari program magang/KP di Badan Pengembangan Sumber 
 | `loginASNlintas.html` | Halaman login untuk ASN Instansi Lainnya |
 | `loginkontrak.html` | Halaman login untuk Tenaga Kontrak Pemerintahan |
 | `loginmasyarakatumum.html` | Halaman login untuk Masyarakat Umum |
+| `index.html` | Halaman beranda Jabar CorpU Talent |
+| `kolaborasi.html` | Halaman kolaborasi |
+| `Personalia.html` | Halaman personalia |
 
 ## Fitur yang Dikerjakan
 - Menambahkan efek hover pada beberapa elemen tampilan
@@ -24,7 +27,9 @@ Proyek ini merupakan bagian dari program magang/KP di Badan Pengembangan Sumber 
 
 ## Cara Menjalankan
 1. Clone repositori ini ke lokal:
+   ```
    git clone https://github.com/EkaPutriAzhari13/KP-BPSDMJABAR.git
+   ```
 2. Buka file `pilihlogin.html` langsung di browser, atau jalankan menggunakan Live Server (ekstensi VS Code) untuk hasil yang lebih optimal.
 
 ## Tim Pengembang

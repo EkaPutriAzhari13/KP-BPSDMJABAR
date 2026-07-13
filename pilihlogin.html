@@ -57,6 +57,7 @@
             padding: 2rem;
         }
 
+<<<<<<< HEAD
         .login-box { width: 100%; max-width: 640px; }
 
 /* Grid 2 kolom untuk kartu kategori */
@@ -90,6 +91,30 @@
     transform: translateY(-4px);
     box-shadow: 0 10px 15px -3px rgba(0, 137, 123, 0.1);
 }
+=======
+        .login-box { width: 100%; max-width: 480px; }
+
+        /* Kategori Card Modern */
+        .category-item {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            background: #ffffff;
+            border: 2px solid #f3f4f6;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            width: 100%;
+        }
+
+        .category-item:hover {
+            border-color: var(--primary-teal);
+            transform: translateX(8px);
+            box-shadow: 0 10px 15px -3px rgba(0, 137, 123, 0.1);
+        }
+>>>>>>> e7d85d8cfa848014fddf4a69834574d369982e88
 
         .icon-box {
             width: 48px;
@@ -173,6 +198,7 @@
             <!-- Sisi Kiri: Branding -->
             <div class="col-lg-6 branding-side">
                 <div class="branding-content">
+<<<<<<< HEAD
                     <img src="assets/logo-jct1.svg" alt="Logo Jabar CorpU Talent" class="mb-5" style="max-width: 280px;">
                     <div class="branding-content">
     <p class="branding-text">
@@ -180,6 +206,14 @@
     </p>
 </div>
                     
+=======
+                    <img src="https://via.placeholder.com/180x60?text=Logo+JCT" alt="Logo" class="mb-5">
+                    <h1 class="branding-title">Jabar CorpU Talent</h1>
+                    <h2 class="branding-subtitle">Sistem Pembelajaran Aparatur Jabar Diajar</h2>
+                    <p class="branding-text">
+                        Akses ribuan materi pembelajaran digital, pelatihan terstruktur, dan sertifikasi dalam satu ekosistem Super App. Dirancang untuk membangun ASN Jawa Barat yang unggul dan kompetitif.
+                    </p>
+>>>>>>> e7d85d8cfa848014fddf4a69834574d369982e88
                 </div>
             </div>
 
@@ -194,7 +228,10 @@
                             <p class="text-muted">Pilih metode masuk sesuai kategori akun Anda</p>
                         </div>
 
+<<<<<<< HEAD
                         <div class="category-grid">
+=======
+>>>>>>> e7d85d8cfa848014fddf4a69834574d369982e88
                         <div class="category-item cat-pemprov" onclick="showForm('ASN Pemprov Jabar', 'bi-building')">
                             <div class="icon-box"><i class="bi bi-building"></i></div>
                             <div class="category-text">
@@ -203,6 +240,7 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <div class="category-item cat-instansi" onclick="showForm('ASN Instansi Lainnya', 'bi-buildings')">
     <div class="icon-box"><i class="bi bi-buildings"></i></div>
     <div class="category-text">
@@ -359,4 +397,106 @@
         }
     </script>
 </body>
+=======
+                        <div class="category-item cat-instansi" onclick="showForm('ASN Instansi Lainnya', 'bi-globe-asia-australia')">
+                            <div class="icon-box"><i class="bi bi-globe-asia-australia"></i></div>
+                            <div class="category-text">
+                                <h6>ASN Instansi Lainnya</h6>
+                                <p>Pegawai Kementerian atau Pemda di luar Jabar</p>
+                            </div>
+                        </div>
+
+                        <div class="category-item cat-kontrak" onclick="showForm('Tenaga Kontrak', 'bi-person-badge')">
+                            <div class="icon-box"><i class="bi bi-person-badge"></i></div>
+                            <div class="category-text">
+                                <h6>Tenaga Kontrak</h6>
+                                <p>Pegawai Non-ASN di lingkungan Pemprov Jabar</p>
+                            </div>
+                        </div>
+
+                        <div class="category-item cat-umum" onclick="showForm('Masyarakat Umum', 'bi-people')">
+                            <div class="icon-box"><i class="bi bi-people"></i></div>
+                            <div class="category-text">
+                                <h6>Masyarakat Umum</h6>
+                                <p>Masyarakat sipil atau pembelajar mandiri</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View 2: Form Login -->
+                    <div id="view-form" class="hidden fade-slide-in">
+                        <div class="text-center mb-4">
+                            <div id="form-icon" class="d-inline-flex align-items-center justify-content-center bg-light text-primary rounded-circle mb-3" style="width: 64px; height: 64px; font-size: 2rem;">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <h4 class="fw-bold mb-1">Masuk Sebagai</h4>
+                            <p class="text-teal fw-bold" id="selected-category"></p>
+                        </div>
+
+                        <form>
+                            <div class="custom-input-group">
+                                <label>Username / NIP / Email</label>
+                                <input type="text" class="custom-input" placeholder="Contoh: 198809..." required>
+                            </div>
+
+                            <div class="custom-input-group">
+                                <label>Kata Sandi</label>
+                                <div class="position-relative">
+                                    <input type="password" id="password" class="custom-input" placeholder="••••••••" required>
+                                    <i class="bi bi-eye position-absolute top-50 end-0 translate-middle-y me-3 text-muted" style="cursor: pointer;"></i>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-main shadow-sm mb-4">Masuk Ke Aplikasi</button>
+
+                            <div class="d-flex align-items-center mb-4">
+                                <hr class="flex-grow-1 text-muted opacity-25">
+                                <span class="mx-3 text-muted small fw-bold">ATAU MASUK DENGAN</span>
+                                <hr class="flex-grow-1 text-muted opacity-25">
+                            </div>
+
+                            <button type="button" class="btn-outline-custom">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_Icons-09.svg" width="18"> 
+                                Google Account
+                            </button>
+                            <button type="button" class="btn-outline-custom">
+                                <i class="bi bi-shield-check text-success"></i> SMART Jabar
+                            </button>
+
+                            <div class="text-center">
+                                <a href="javascript:void(0)" onclick="showCategories()" class="back-link">
+                                    <i class="bi bi-arrow-left"></i> Kembali ke pilihan kategori
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showForm(category, iconClass) {
+            document.getElementById('selected-category').innerText = category;
+            
+            // Update ikon di form
+            const formIconWrapper = document.getElementById('form-icon');
+            formIconWrapper.innerHTML = `<i class="bi ${iconClass}"></i>`;
+            
+            // Warna dinamis ikon form (opsional)
+            if(category.includes('Pemprov')) formIconWrapper.className = "d-inline-flex align-items-center justify-content-center rounded-circle mb-3 bg-primary-subtle text-primary";
+            if(category.includes('Lainnya')) formIconWrapper.className = "d-inline-flex align-items-center justify-content-center rounded-circle mb-3 bg-success-subtle text-success";
+            
+            document.getElementById('view-categories').classList.add('hidden');
+            document.getElementById('view-form').classList.remove('hidden');
+        }
+
+        function showCategories() {
+            document.getElementById('view-form').classList.add('hidden');
+            document.getElementById('view-categories').classList.remove('hidden');
+        }
+    </script>
+</body>
+>>>>>>> e7d85d8cfa848014fddf4a69834574d369982e88
 </html>
